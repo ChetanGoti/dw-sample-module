@@ -11,7 +11,7 @@ jobs:
           name: Deploy
           command: |
             export NPM_TOKEN=${SNAPSHOT_NPM_TOKEN}
-            npm config set @dreamworld:registry https://npm-snapshot.dreamworld.solutions
+            npm config set ${NPM_PACKAGE_SCOPE}:registry ${NPM_SNAPSHOT_REPO}
             npx semantic-release
   release:
     docker:
